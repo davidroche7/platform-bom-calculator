@@ -80,11 +80,11 @@
         <td><input type="number" id="price-redis-multi" value="66" /></td>
       </tr>
       <tr>
-        <td>Kafka (MSK) - Dev (t3.small)</td>
+        <td>Kafka (MSK) – Dev (t3.small)</td>
         <td><input type="number" id="price-kafka-dev" value="14" /></td>
       </tr>
       <tr>
-        <td>Kafka (MSK) - Prod (m5.large x3)</td>
+        <td>Kafka (MSK) – Prod (m5.large × 3)</td>
         <td><input type="number" id="price-kafka-prod" value="420" /></td>
       </tr>
       <tr>
@@ -139,4 +139,36 @@
       <label for="dataVolume">Monthly Data Volume (GB):</label>
       <input type="number" id="dataVolume" value="100" />
     </div>
-    <div class="con
+    <div class="config-line">
+      <label for="envType">Environment:</label>
+      <select id="envType">
+        <option value="dev">Dev</option>
+        <option value="test">Test</option>
+        <option value="stage">Stage</option>
+        <option value="prod" selected>Prod</option>
+      </select>
+    </div>
+  </div>
+
+  <button id="calculateBtn">Calculate Cost</button>
+
+  <hr />
+
+  <!-- **THIS IS THE OUTPUT SECTION** -->
+  <h2>Cost Summary</h2>
+  <div id="costSummary">
+    <p><strong>Fixed Cost:</strong> <span id="fixedCost">€0</span></p>
+    <p><strong>Variable Cost:</strong> <span id="variableCost">€0</span></p>
+    <p><strong>Total Cost:</strong> <span id="totalCost">€0</span></p>
+  </div>
+
+  <hr />
+
+  <h2>Detailed Breakdown</h2>
+  <!-- This <pre> block will be populated by JavaScript -->
+  <pre id="detailedBreakdown" class="breakdown"></pre>
+
+  <!-- Be sure script.js is in the same folder as index.html -->
+  <script src="script.js"></script>
+</body>
+</html>
